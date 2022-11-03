@@ -4,7 +4,8 @@ public class PioGame {
     public static void main(String[] args) {
 
         //polimorfizm
-        Player player = new PlayerHuman();
+//        Player player = new PlayerHuman();
+        Player player = new PlayerComp();
 
         try {
             player.setName("Michal");
@@ -26,7 +27,7 @@ public class PioGame {
             System.out.println("Kostka: " + number);
 
             guess = player.guess(); //odgadywanie przez obiekt klasy Player
-            System.out.println("Gracz:\n" + player.getName() + ": " + guess);
+            System.out.println("Gracz " + player.getName() + ": " + guess);
 
             if(guess != number) {
                 System.out.print("Żle\n");

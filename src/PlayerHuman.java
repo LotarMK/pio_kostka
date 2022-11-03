@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class PlayerHuman extends Player {
 
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner cin = new Scanner(System.in);
 
     public PlayerHuman() {}
 
@@ -12,7 +12,8 @@ public class PlayerHuman extends Player {
 
     @Override
     public int guess() {
-        System.out.println("Wpisz liczbę (1-6): ");
-        return scanner.nextInt();
+        System.out.print("Wpisz liczbę (1-6): ");
+        return cin.nextInt();
     }
+
 }
