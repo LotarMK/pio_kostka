@@ -1,40 +1,37 @@
-import java.util.Random;
-
 public class PioGame {
     public static void main(String[] args) {
 
-        //polimorfizm
-//        Player player = new PlayerHuman();
-        Player player = new PlayerComp();
+        Game game = new Game();
 
-        try {
-            player.setName("Michal");
+        game.addPlayer(new PlayerComp("Stefan"));
+        game.addPlayer(new PlayerComp("Marian"));
+        System.out.println("---------");
+
+        //game.removePlayer("Stefan");
+        game.printPlayer();
+
+        for (int i = 0; i < 100; ++i) {
+            game.play();
+            game.printStats();
         }
-        catch (IllegalArgumentException ex) {
-            System.err.println("Błąd " + ex.getMessage());
-        }
-        catch (Exception ex) {
-            System.err.println("Błąd");
-        }
 
-        Random rand = new Random(); //obiekt losujący
-        int number; //wylosowana liczba
-        int guess; //strzał gracza
+//        System.out.println("--------------------------------");
+//        List<String> list = new ArrayList();
+//        list.add("coś");
+//        list.add("coś jeszcze");
+//
+//        for (Iterator<String> it = list.iterator(); it.hasNext(); ) {
+//            String el = it.next();
+//            System.out.println(el);
+//        }
 
-        number = rand.nextInt(6)+1;
+//        Iterator<String> it = list.iterator();
+//        while(it.hasNext()) {
+//            System.out.println(it.next());
+//        }
 
-        do {
-            System.out.println("Kostka: " + number);
-
-            guess = player.guess(); //odgadywanie przez obiekt klasy Player
-            System.out.println("Gracz " + player.getName() + ": " + guess);
-
-            if(guess != number) {
-                System.out.print("Żle\n");
-            }
-
-        } while(number != guess);
-
-        System.out.println("Dobrze!");
+//        for (String el : list) {
+//            System.out.println(el.toUpperCase());
+//        }
     }
 }

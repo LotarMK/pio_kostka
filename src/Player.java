@@ -6,7 +6,7 @@ public abstract class Player {
         setName(name);
     }
 
-    private String name = "Anonymous";
+    private String name = "Domyslny Anonymous";
 
     public String getName() {
         return name;
@@ -16,9 +16,10 @@ public abstract class Player {
         if(name != null && name.matches("^[A-Za-z0-9,.\\-_]{3,}$")) {
             this.name = name;
         } else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Nieprawidłowe imie");
         }
     }
 
     public abstract int guess();
+
 }
